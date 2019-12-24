@@ -47,7 +47,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   div a {
-    text-decoration: none;
     color: inherit;
     -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
     -webkit-tap-highlight-color: transparent;
