@@ -51,11 +51,11 @@ const Post = styled.div`
 const Home = ({ data }) => {
   return (
     <>
-      <SEO title="Blog" />
+      <SEO title="Home" />
       <HeaderLogo />
       <Layout>
         <Hero>
-          <HeadingXL>Lewis Gatsby Starter Blog</HeadingXL>
+          <HeadingXL>Photos from Taiwan</HeadingXL>
           <TextHome>
             This is a custom Gatsby starter template to start a new blog or
             personal website.
