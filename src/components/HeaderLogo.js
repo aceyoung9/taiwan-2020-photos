@@ -23,7 +23,7 @@ export const HeaderLogo = () => {
     <HeaderWrapper>
       <Logo>LGSB</Logo>
       <Link to="/about">
-        <p>About</p>
+        About
       </Link>
     </HeaderWrapper>
   );
