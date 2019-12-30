@@ -20,14 +20,14 @@ export const Footer = () => {
   return (
     <Container>
       <ButtonLink
-        href="https://mobile.twitter.com/lewislbr"
+        href="https://twitter.com/aceyoung_9"
         target="_blank"
         rel="noopener noreferrer"
       >
         Twitter
       </ButtonLink>
       <ButtonLink
-        href="https://github.com/lewislbr/lewis-gatsby-starter-blog"
+        href="https://github.com/aceyoung9"
         target="_blank"
         rel="noopener noreferrer"
       >
