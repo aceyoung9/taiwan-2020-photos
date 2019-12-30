@@ -47,7 +47,6 @@ const GridContainer = styled.div`
         bottom: 0;
         left: 0;
         z-index: -1;
-        margin: -5px;
         border-radius: inherit;
         background: -webkit-linear-gradient(
           240deg,
@@ -58,6 +57,14 @@ const GridContainer = styled.div`
           hsl(240, 100%, 70%)
         );
       }
+    }
+
+    &:hover:before {
+      margin: -5px;
+    }
+
+    &:focus:before {
+      margin: -10px;
     }
   }
 `;
