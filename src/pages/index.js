@@ -10,7 +10,6 @@ import {
   HeadingL,
   Layout,
   SEO,
-  TextBody,
   TextDate,
 } from '../components';
 
@@ -22,30 +21,50 @@ const Hero = styled.div`
   }
 `;
 
-const TextHome = styled.p`
-  color: var(--dark-color-light);
-  display: block;
-  font-size: 22px;
-  line-height: 1.6;
-  margin-bottom: 10vh;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 28em;
-  text-align: center;
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
 
   @media (max-width: ${BREAKPOINT}px) {
-    font-size: 19px;
-    margin-bottom: 7vh;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  a {
+    text-decoration: none;
+    background-color: lightgray;
+    position: relative;
+    &:hover,
+    &:focus {
+      background-color: white;
+      outline: 0;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -5px;
+        border-radius: inherit;
+        background: -webkit-linear-gradient(
+          240deg,
+          hsl(189, 100%, 50%),
+          hsl(174, 79%, 49%),
+          hsl(188, 81%, 59%),
+          hsl(213, 62%, 61%),
+          hsl(240, 100%, 70%)
+        );
+      }
+    }
   }
 `;
 
 const Post = styled.div`
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 50px;
-
-  @media (max-width: ${BREAKPOINT}px) {
-    padding-left: 0;
-  }
+  min-height: 280px;
+  padding: 15px;
 `;
 
 const Home = ({ data }) => {
@@ -56,20 +75,17 @@ const Home = ({ data }) => {
       <Layout>
         <Hero>
           <HeadingXL>Photos from Taiwan</HeadingXL>
-          <TextHome>
-            This is a custom Gatsby starter template to start a new blog or
-            personal website.
-          </TextHome>
         </Hero>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Link to={node.fields.slug} key={node.id}>
-            <Post>
-              <HeadingL>{node.frontmatter.title}</HeadingL>
-              <TextBody>{node.excerpt}</TextBody>
-              <TextDate>{node.frontmatter.date}</TextDate>
-            </Post>
-          </Link>
-        ))}
+        <GridContainer>
+          {data.allMarkdownRemark.edges.map(({ node }) => (
+            <Link to={node.fields.slug} key={node.id}>
+              <Post>
+                <HeadingL>{node.frontmatter.date}</HeadingL>
+                <TextDate>{node.frontmatter.title}</TextDate>
+              </Post>
+            </Link>
+          ))}
+        </GridContainer>
       </Layout>
     </>
   );
@@ -90,7 +106,6 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt
         }
       }
     }
