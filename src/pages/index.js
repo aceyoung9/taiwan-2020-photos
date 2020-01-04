@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 import { BREAKPOINT } from '../utils/constants';
 
@@ -90,6 +91,9 @@ const Home = ({ data }) => {
                 <HeadingL>{node.frontmatter.date}</HeadingL>
                 <TextDate>{node.frontmatter.title}</TextDate>
               </Post>
+              {!!node.frontmatter.cover ? (
+                <Img sizes={node.frontmatter.cover.childImageSharp.sizes} />
+              ) : null}
             </Link>
           ))}
         </GridContainer>
@@ -109,6 +113,14 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+            cover {
+              publicURL
+              childImageSharp {
+                sizes(maxWidth: 2000) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
           fields {
             slug
