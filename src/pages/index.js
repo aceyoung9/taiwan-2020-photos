@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { css } from 'styled-components/macro'; // eslint-disable-line no-unused-vars
+import BackgroundImage from 'gatsby-background-image';
 
 import { BREAKPOINT } from '../utils/constants';
 
@@ -75,6 +76,10 @@ const Post = styled.div`
   padding: 15px;
 `;
 
+const DymoTape = `background: white;
+display: inline-block;
+padding: 0.3em;`;
+
 const Home = ({ data }) => {
   return (
     <>
@@ -87,13 +92,22 @@ const Home = ({ data }) => {
         <GridContainer>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <Link to={node.fields.slug} key={node.id}>
-              <Post>
-                <HeadingL>{node.frontmatter.date}</HeadingL>
-                <TextDate>{node.frontmatter.title}</TextDate>
-              </Post>
               {!!node.frontmatter.cover ? (
-                <Img sizes={node.frontmatter.cover.childImageSharp.sizes} />
-              ) : null}
+                <BackgroundImage
+                  fluid={[node.frontmatter.cover.childImageSharp.sizes]}
+                  style={{ mixBlendMode: 'luminosity' }}
+                >
+                  <Post>
+                    <TextDate css={DymoTape}>{node.frontmatter.date}</TextDate>
+                  </Post>
+                </BackgroundImage>
+              ) : (
+                <>
+                  <Post>
+                    <HeadingL>{node.frontmatter.date}</HeadingL>
+                  </Post>
+                </>
+              )}
             </Link>
           ))}
         </GridContainer>
@@ -111,12 +125,11 @@ export const query = graphql`
         node {
           id
           frontmatter {
-            title
             date(formatString: "MMMM DD, YYYY")
             cover {
               publicURL
               childImageSharp {
-                sizes(maxWidth: 2000) {
+                sizes(maxWidth: 1800) {
                   ...GatsbyImageSharpSizes
                 }
               }
