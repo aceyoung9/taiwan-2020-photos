@@ -25,6 +25,13 @@ const About = ({ data }) => {
             Don't expect daily entries. Do expect posts to be edited and amended
             eventually.
           </p>
+          <p>
+            The repository for this site is on GitHub at{' '}
+            <a href="https://github.com/aceyoung9/taiwan-2020-photos">
+              aceyoung9/taiwan-2020-photos
+            </a>
+            .
+          </p>
         </TextBody>
       </Layout>
     </>
