@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://lewis-gatsby-starter-blog.netlify.com/sitemap.xml
+Host: https://lewis-gatsby-starter-blog.netlify.com
