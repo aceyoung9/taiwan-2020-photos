@@ -104,7 +104,9 @@ const Home = ({ data }) => {
               ) : (
                 <>
                   <Post>
-                    <HeadingL>{node.frontmatter.date}</HeadingL>
+                    <TextDate css={DymoTape}>{node.frontmatter.date}</TextDate>
+
+                    <HeadingL>{node.frontmatter.title}</HeadingL>
                   </Post>
                 </>
               )}
@@ -126,6 +128,7 @@ export const query = graphql`
           id
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            title
             cover {
               publicURL
               childImageSharp {

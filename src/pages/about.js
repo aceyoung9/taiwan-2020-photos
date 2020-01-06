@@ -21,7 +21,10 @@ const About = ({ data }) => {
             </a>
             .
           </p>
-          <p>Daily entries may be backfilled.</p>
+          <p>
+            Don't expect daily entries. Do expect posts to be edited and amended
+            eventually.
+          </p>
         </TextBody>
       </Layout>
     </>
