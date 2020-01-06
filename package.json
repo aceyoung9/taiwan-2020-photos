@@ -39,7 +39,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "gatsby build && gh-pages -d public",
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve"
   }
