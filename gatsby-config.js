@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Ace Young`,
     description: `Photoblog from a trip to Taiwan`,
-    siteUrl: `https://lewis-gatsby-starter-blog.netlify.com`,
+    siteUrl: `http://tw-photos.aceyoung.online/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
