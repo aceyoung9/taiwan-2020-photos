@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://lewis-gatsby-starter-blog.netlify.com/sitemap.xml
-Host: https://lewis-gatsby-starter-blog.netlify.com
+Sitemap: http://tw-photos.aceyoung.online/sitemap.xml
+Host: tw-photos.aceyoung.online
