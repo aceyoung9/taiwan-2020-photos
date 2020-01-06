@@ -1,13 +1,13 @@
 {
-  "name": "lewis-gatsby-starter-blog",
-  "description": "A custom Gatsby starter template to start a blog or personal website.",
-  "author": "@lewislbr",
+  "name": "ace-tw-photos",
+  "description": "",
+  "author": "Ace Young <ace.young289@gmail.com> (http://aceyoung.xyz)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lewislbr/lewis-gatsby-starter-blog"
+    "url": "https://github.com/aceyoung9/taiwan-2020-photos"
   },
   "version": "0.1.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
