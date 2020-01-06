@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/aceyoung9/taiwan-2020-photos"
   },
+  "homepage": "http://tw-photos.aceyoung.online/",
   "version": "0.1.0",
   "license": "UNLICENSED",
   "private": true,
@@ -32,11 +33,13 @@
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "prettier": "^1.19.1"
   },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public"
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve"
   }
