@@ -9,3 +9,5 @@ cover: './qiyan2.jpg'
 ![A section of the elevated Red Line, headed to Tamsui](qiyan1.jpg)
 
 ![an elevated rail interchange in the Beitou district of Taipei](qiyan2.jpg)
+
+![squid skewers](squid.jpg)
